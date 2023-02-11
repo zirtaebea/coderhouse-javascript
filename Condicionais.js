@@ -1,16 +1,27 @@
-//ideia: tipos de dieta
-// onivora; carnivora; vegetariana; vegana;
-// receber true ou false e retornar alerta com 
-// a dieta correspondente as opções
+// ideia: meia passagem
+// quem tem direito? 
+// menor de 18; maior de 18 e estudante
+//lembrar que maior de 65 anos é gratuidade
 
-alert ('Responda as seguintes perguntas com true ou false, sendo true = sim e false = não')
-let carne = prompt ('Você come carne? ')
-let ovo = prompt ('Você come ovo? ')
-let leite = prompt ('Você ingere leite ou derivados? ')
-let frutasVeg = prompt ('Você come frutas e vegetais? ')
+//introduzindo
+alert ('Descubra se você tem direito a meia passagem respondendo os campos com atenção')
+alert ('Preencha sua idade com números inteiros apenas')
+
+
+//declarando variaveis 
+let idade = prompt('Qual é a sua idade? ')
+
+//alerta explicaçao
+alert ('Responda a próxima pergunta com true ou false minúsculo (sem CAPS LOCK), sendo true = sim e false = não')
+
+//declarando estudante
+let estudante = prompt('Você é estudante? ')
 
 //condicional
-
-if ((carne && ovo && leite && veg) || (carne) == true){
-    alert ('Sua dieta é onivora')
+if ((idade<=18) || (idade>18 && estudante == true)) {
+    alert ('Legal, Você tem direito a meia passagem!');
+} else if (idade>=65) {
+ alert ('Você não paga mais passagem, a partir dos 65 anos a passagem é gratuidade')   
+} else {
+    alert("você não tem direito a meia passagem :("); 
 }
