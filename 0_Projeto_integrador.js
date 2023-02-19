@@ -7,6 +7,9 @@ as propriedades do construtor
 3- fazer uma ultima função de retornar ao menu principal
 */
 
+//ATENCAO O PROJETO ATUAL CONTEM APLICACOES DAS AULAS 4 E 5 (FUNCOES E OBJETOS)
+
+
 //iniciar
 let escolhaBairro = prompt('Escolha o bairro que você deseja:\n1 - Pituba\n2 - Centro histórico\nDigite apenas o número correspondente')
 
