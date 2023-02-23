@@ -8,22 +8,17 @@ function insereNumero(num){
 }
 
 
-function verificaPrimo(){
-
-    let divisores = 0
-    for(let i = 1 ; i <=numero ; i++)
-        if(numero % i == 0)
-        divisores++;
-   
-        if(divisores==2){}
-      alert("O número")
-         else
-       resposta.innerHTML='Não é primo';
- }
- 
-}
-
-
 function proximosPrimos(){
-    for (i = 1; i > 5)
+    
+    let divisor = 2
+
+    while(numero%divisor != 0){
+        divisor++
+        if(numero == divisor){
+            alert('O número ' + numero + ' é primo')
+            } else {
+                alert ('O número ' + numero + ' não é primo')
+            }
+    }
+
 }
