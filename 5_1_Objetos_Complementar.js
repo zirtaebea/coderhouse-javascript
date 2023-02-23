@@ -14,15 +14,15 @@ function verificaPrimos(){
 
     while(numero%divisor != 0){
         divisor++
-        if(numero == divisor){
+            if(numero == divisor){
             alert('O número ' + numero + ' é primo')
             } else {
-                alert ('O número ' + numero + ' não é primo')
+            alert ('O número ' + numero + ' não é primo')
             }
     }
 
 }
 
 function proximosPrimos(){
-    
+
 }
