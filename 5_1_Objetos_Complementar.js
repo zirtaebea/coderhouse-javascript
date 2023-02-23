@@ -8,7 +8,7 @@ function insereNumero(num){
 }
 
 
-function proximosPrimos(){
+function verificaPrimos(){
     
     let divisor = 2
 
