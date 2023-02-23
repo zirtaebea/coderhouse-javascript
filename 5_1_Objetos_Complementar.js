@@ -22,3 +22,7 @@ function verificaPrimos(){
     }
 
 }
+
+function proximosPrimos(){
+    
+}
