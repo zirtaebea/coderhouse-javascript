@@ -17,16 +17,16 @@
             }
 
             header{
-                background-color: #750a2a;
-                color: #ffffff;
+                background-color: #F8F8FF;
+                color: #750a2a;
                 font-family: 'Roboto';
                 width: 100%;
-                
+                position: fixed;
             }
 
             footer{
-                background-color: #750a2a;
-                color: #ffffff;
+                background-color: #F8F8FF;
+                color: #750a2a;
                 font-family: 'Roboto';   
                 text-align: center;
             }
@@ -34,17 +34,15 @@
             h3{
                 
                 font-size: 20px;
-                text-align: left;
+                text-align: center;
                 padding-top: 15px;
-                padding-left: 15px;
                 padding-bottom: 5px;
                 margin: 0;
             }
 
             h4{
                 font-size: 12px;
-                text-align: left;
-                padding-left: 15px;
+                text-align: center;
                 padding-bottom: 15px;
                 margin: 0;
             }
@@ -53,10 +51,43 @@
                 text-align: center;
                 font-size: 0.8rem;
                 font-family: 'Roboto';
-                
-
+            
             }
 
+            .compra{
+                background-color: #750a2a;
+                width: 100px;
+                height: 100px;
+                position: fixed;
+                right: 0;
+                text-align: center;
+                margin-top: 30%;
+                z-index: 1;
+            }
+
+            .texto-exemplo{
+                text-align: justify;
+                padding: 50px;
+                font-size: 1.0rem;
+                font-family: 'Roboto';
+            }
+
+            h5{
+                font-family: 'Roboto';
+                color: #F8F8FF;
+                text-align: center;
+                padding: 10px;
+                font-size: 0.8rem;
+            }
+
+            button{
+                text-align: center;
+                font-size: 0.8rem;
+                padding: 5px;
+                font-family: 'Roboto';
+                color: #750a2a;
+                background-color: #F8F8FF;
+            }
 
         </style>
     
@@ -69,7 +100,25 @@
             <h4>Em progresso hihi (titulo a definir)</h4>
         </header>
 
-        <section></section>
+        <div class="compra">
+            <h5>Compre Agora</h5>
+            <button>Compre</button>
+        </div>
+        <!--LEMBRAR DE PERGUNTAR PQ MEU BOTAO SÓ APARECE QUANDO O NAVEGADOR ESTÁ NO MODO RESPONSIVO E NAO NO DESKTOP-->
+        <section>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p class="texto-exemplo">
+                The quick brown fox jumps over the lazy dog (tradução do inglês para A rápida raposa marrom pula por cima do cão preguiçoso) é um pangrama, frase que utiliza todas as letras do alfabeto na língua inglesa. É utilizado para exibir e demonstrar como ficariam todas as letras em uma impressão com apenas uma frase.
+                Alguns tradutores de programas simplesmente transliteram a citação sem procurar usar um pangrama em português, como "Um pequeno jabuti xereta viu dez cegonhas felizes" (42 letras).
+                (Vide outros exemplos de pangramas)
+                A frase aparece como exemplo em alguns programas da Microsoft, porém não está adaptada ao português. No Microsoft Word, a frase é escrita automaticamente várias vezes pela seguinte linha de comando: =rand(x,y), onde x = número de parágrafos desejado, e y = número de vezes que se deseja que a frase seja repetida em cada parágrafo. Provavelmente, a intenção do programador era oferecer ao usuário um meio rápido de avaliar o efeito visual de uma fonte, mas por não encontrar-se em português, esta função fica prejudicada.
+            </p>
+        </section>
         <br><br><br>
         <footer>
            
