@@ -13,7 +13,6 @@
                 margin: 0;
                 border: 0;
                 padding: 0;
-
             }
 
             header{
@@ -118,6 +117,50 @@
                 background-color: #c47186;
             }
 
+            .formulario-contato{
+                font-family: 'Roboto';
+                font-size: 1rem;
+                text-align: left;
+                font-weight: bold;
+            }
+
+            input{
+                font-family: 'Roboto';
+                font-size: 1rem;
+                font-weight: bold;
+                padding: 5px;
+                
+            }
+
+            .dados-bairro{
+                width: 30%;
+
+            }
+
+            nav{
+
+                text-align: center;
+                font-weight: bold;
+                font-size: 1rem;
+                font-family: 'Roboto';
+                padding: 10px;
+                word-spacing: 10px;
+                background-color: #750a2a;
+                
+            }
+
+            a{
+                text-decoration: none;
+                color:#F8F8FF;
+                
+            }
+
+            a:hover{
+                transition: all 300ms ease-in-out;
+                color: #c47186;
+            }
+
+
         </style>
     
     </head>
@@ -125,8 +168,17 @@
     <body>
 
         <header>
+            
+            <nav>
+                <a href="#">Início</a>
+                <a href="#">Sobre</a>
+                <a href="#">Bairros</a>
+                <a href="#">Contato</a>
+            </nav>
             <h3>Projeto buscador restaurantes de Salvador</h3>
             <h4>Em progresso hihi (titulo a definir)</h4>
+        
+        
         </header>
 
         <div class="compra">
@@ -135,13 +187,7 @@
         </div>
         <!--LEMBRAR DE PERGUNTAR PQ MEU BOTAO SÓ APARECE QUANDO O NAVEGADOR ESTÁ NO MODO RESPONSIVO E NAO NO DESKTOP-->
         <section>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
+            <br><br><br><br><br>
              <p class="texto-exemplo">
                 The quick brown fox jumps over the lazy dog (tradução do inglês para A rápida raposa marrom pula por cima do cão preguiçoso) é um pangrama, frase que utiliza todas as letras do alfabeto na língua inglesa. É utilizado para exibir e demonstrar como ficariam todas as letras em uma impressão com apenas uma frase.
                 Alguns tradutores de programas simplesmente transliteram a citação sem procurar usar um pangrama em português, como "Um pequeno jabuti xereta viu dez cegonhas felizes" (42 letras).
@@ -170,9 +216,40 @@
         <br>
 
         <section class="texto-exemplo" id="formulario"><!--mudar p para section class texto exemplo-->
-            <h2>Selecione o bairro que deseja procurar um restaurante</h2>
+            <h2>Busque o restaurante que deseja de acordo com bairro e tipo de refeição:</h2>
             <form action="#" method="get" target="_blank">
-                <input type="text" id="nomebairro" name="bairro" placeholder="Insira o nome do bairro">
+                <br>
+                <p class="formulario-contato">
+                    
+                    <label for="nomebairro">Nome do bairro:</label><br>
+                    <input class="dados-bairro" type="text" id="nomebairro" name="bairro" placeholder="Insira o nome do bairro">
+                
+                </p>
+                <br><br>
+                <p class="formulario-contato">Selecione o tipo de refeição:</p><br>
+                <p class="formulario-contato">
+                    
+                    <input type="checkbox" id="cafe" name="cafe" value="cafe da manha">
+                    <label for="cafe"> Café da manhã </label>
+                    <br>
+
+                    <input type="checkbox" id="almoco" name="almoco" value="almoco">
+                    <label for="almoco"> Almoço</label>
+                    <br>
+
+                    <input type="checkbox" id="jantar" name="jantar" value="jantar">
+                    <label for="almoco">Jantar</label>
+                    <br>
+
+                </p>
+                <br>
+
+                <p class="formulario-contato">
+                    
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Limpar os campos">
+                    
+                </p>
 
             </form>
 
