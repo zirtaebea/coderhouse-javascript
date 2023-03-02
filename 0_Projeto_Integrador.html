@@ -71,6 +71,7 @@
                 padding: 50px;
                 font-size: 1.0rem;
                 font-family: 'Roboto';
+                
             }
 
             h5{
@@ -88,6 +89,33 @@
                 font-family: 'Roboto';
                 color: #750a2a;
                 background-color: #F8F8FF;
+            }
+
+            #grid-teste{
+                margin-top: 5px;
+                background-color: #dd2e62;
+                align-items: center;
+                
+            }
+
+            .grid{
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-gap: 1px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .grid div{
+                background-color: #ffffff;
+                font-family: 'Roboto';
+                text-align: center;
+                font-size: 0.8rem;
+                padding: 2px;
+            }
+
+            #formulario{
+                background-color: #c47186;
             }
 
         </style>
@@ -113,16 +141,7 @@
             <br>
             <br>
             <br>
-            <p class="texto-exemplo" id="grid-teste">
-                <div class="grid">
-                    <div>Conteudo 1</div>
-                    <div>Conteudo 2</div>
-                    <div>Conteudo 3</div>
-                    <div>Conteudo 4</div>
-                    <div>Conteudo 5</div>
-                    <div>Conteudo 6</div>
-                </div>
-            </p>
+
              <p class="texto-exemplo">
                 The quick brown fox jumps over the lazy dog (tradução do inglês para A rápida raposa marrom pula por cima do cão preguiçoso) é um pangrama, frase que utiliza todas as letras do alfabeto na língua inglesa. É utilizado para exibir e demonstrar como ficariam todas as letras em uma impressão com apenas uma frase.
                 Alguns tradutores de programas simplesmente transliteram a citação sem procurar usar um pangrama em português, como "Um pequeno jabuti xereta viu dez cegonhas felizes" (42 letras).
@@ -136,7 +155,31 @@
                 A frase aparece como exemplo em alguns programas da Microsoft, porém não está adaptada ao português. No Microsoft Word, a frase é escrita automaticamente várias vezes pela seguinte linha de comando: =rand(x,y), onde x = número de parágrafos desejado, e y = número de vezes que se deseja que a frase seja repetida em cada parágrafo. Provavelmente, a intenção do programador era oferecer ao usuário um meio rápido de avaliar o efeito visual de uma fonte, mas por não encontrar-se em português, esta função fica prejudicada.
             </p>
         </section>
-        <br><br><br>
+        <br><br>
+        <section class="texto-exemplo" id="grid-teste">
+
+            <div class="grid">
+                <div>Conteudo 1</div>
+                <div>Conteudo 2</div>
+                <div>Conteudo 3</div>
+                <div>Conteudo 4</div>
+                <div>Conteudo 5</div>
+                <div>Conteudo 6</div>
+            </div>
+        </section>
+        <br>
+
+        <section class="texto-exemplo" id="formulario"><!--mudar p para section class texto exemplo-->
+            <h2>Selecione o bairro que deseja procurar um restaurante</h2>
+            <form action="#" method="get" target="_blank">
+                <input type="text" id="nomebairro" name="bairro" placeholder="Insira o nome do bairro">
+
+            </form>
+
+
+            </section>
+        <br>
+
         <footer>
            
             <h3 class="texto-footer">Projeto integrador Coderhouse</h3>
