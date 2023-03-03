@@ -25,6 +25,62 @@ let listaAlmocoCentro = ['Restaurante Pelô Bistrô', ' Omí Restaurante', ' Res
 let listaJantarCentro = ['Bar Ulisses', ' Poró Restaurante & Bar', ' Zanzibar']
 
 
+//sendo id 1 - pituba e id 2 - centro
+const cafeDaManha = [{id: 1, restaurante: "Cantina Cosa Notra"},
+                     {id: 1, restaurante: "Casa de Noca"},
+                     {id: 1, restaurante: "Santo Pão Gourmet"},
+                     {id: 2, restaurante: "Padoca do Carmo"}, 
+                     {id: 2, restaurante:"Pousada das Artes"}, 
+                     {id: 2, restaurante: "Cafélier"}]
+
+const almoco = [{id: 1, restaurante: "Bella Gourmet Bistrot"},
+                {id: 1, restaurante: "Arabesque Empório Árabe"},
+                {id: 1, restaurante: "Restaurante Martim Pescador"},
+                {id: 2, restaurante: "Restaurante Pelô Bistrô"}, 
+                {id: 2, restaurante: "Omí Restaurante"}, 
+                {id: 2, restaurante: "Restaurante Mistura Contorno"}]                    
+
+const jantar = [{id: 1, restaurante: "La Pasta Gialla"},
+                {id: 1, restaurante: "Cantina Buoni Amici"},
+                {id: 1, restaurante: "Origem"},
+                {id: 2, restaurante: "Bar Ulisses"}, 
+                {id: 2, restaurante:"Poró Restaurante & Bar"}, 
+                {id: 2, restaurante: "Zanzibar"}] 
+
+for (const restaurante of cafeDaManha){
+    console.log(restaurantes.id);
+    console.log(restaurante.restaurante)
+}                    
+
+/*const produtos = [{ id: 1, produto: "Arroz" },
+                  { id: 2,  produto: "Macarrão" },
+                  { id: 3,  produto: "Pão" }];
+
+for (const produto of produtos) {
+    console.log(produto.id);
+    console.log(produto.produto);
+
+    --------------------------------------------------
+    class Produto {
+        constructor(nome, preco) {
+            this.nome = nome.toUpperCase();
+            this.preco = parseFloat(preco);
+            this.vendido = false;
+        }
+        somaICMS() {
+            this.preco = this.preco * 1.21;
+        }
+    }
+    //Declaramos um array de produtos para armazenar objetos
+    const produtos = [];
+    produtos.push(new Produto("arroz", "125"));
+    produtos.push(new Produto(“macarrão", "70"));
+    produtos.push(new Produto("pão", "50"));
+    //Iteramos o array com for...of para modificar todos
+    for (const produto of produtos)
+        produto.somaICMS();
+*/
+
 //objeto pituba com restaurantes e metodo
 class pituba{
     constructor(restaurantesCafe, restaurantesAlmoco, restauranteJantar){
