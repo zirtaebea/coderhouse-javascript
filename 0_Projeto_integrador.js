@@ -48,7 +48,7 @@ const jantar = [{id: 1, restaurante: "La Pasta Gialla"},
                 {id: 2, restaurante: "Zanzibar"}] 
 
 for (const restaurante of cafeDaManha){
-    console.log(restaurantes.id);
+    console.log(restaurante.id);
     console.log(restaurante.restaurante)
 }                    
 
