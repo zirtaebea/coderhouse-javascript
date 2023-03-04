@@ -58,6 +58,11 @@ for (const restaurante of cafeDaManha){
 for (const produto of produtos) {
     console.log(produto.id);
     console.log(produto.produto);
+
+for (const produto of produtos) {
+    console.log(produto.id);
+    console.log(produto.produto);
+
     --------------------------------------------------
     class Produto {
         constructor(nome, preco) {
@@ -78,7 +83,6 @@ for (const produto of produtos) {
     for (const produto of produtos)
         produto.somaICMS();
 */
-
 
 //objeto pituba com restaurantes e metodo
 class pituba{
