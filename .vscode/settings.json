@@ -1,4 +1,5 @@
 {
     "prettier.requireConfig": true,
+    "prettier.bracketSameLine": true,
     "prettier.configPath": "editor.formatOnSave\": true"
 }
