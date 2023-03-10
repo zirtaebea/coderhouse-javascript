@@ -1,14 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-<body>
-    
-</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Cardápio Soteropolitano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <header><h1>Cardápio Soteropolitano</h1></header>
+    <div class="background">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Salvador_BA.jpg/1920px-Salvador_BA.jpg"
+        alt="teste"
+        class="bg-img"
+      />
+      <div class="gradiente"></div>
+    </div>
+
+    <h2>Procurando um restaurante Soteropolitano?</h2>
+    <form action="#" method="get" target="_blank">
+      <section class="caixa-de-busca">
+        <br />
+        <label for="busca"
+          ><br />
+          <input
+            class="dados-site"
+            type="text"
+            id="busca"
+            name="bairro"
+            placeholder="   Insira o nome do bairro"
+          />
+        </label>
+      </section>
+      <section class="botao"><input type="submit" value="Pesquisar" /></section>
+    </form>
+    <br />
+
+    <button type="button" id="cafe-da-manha" class="nomeref">
+      Café da manhã
+    </button>
+    <button type="button" id="almoco" class="nomeref">Almoço</button>
+    <button type="button" id="jantar" class="nomeref">Jantar</button>
+    <button type="button" id="todos" class="nomeref">Todos</button>
+  </body>
 </html>
