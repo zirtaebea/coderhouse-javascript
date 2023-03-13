@@ -34,16 +34,24 @@ const jantar = [
 const cafeAlmoco = cafe.concat(almoco);
 const geral = cafeAlmoco.concat(jantar);
 
-let filtroCafe = document.getElementById("cafe-da-manha");
-filtroCafe.onclick = () => {
-  const centroCafe = cafe.filter((idCafe) => idCafe.id == 2);
-  const pitubaCafe = cafe.filter((idCafe) => idCafe.id == 1);
+const centroCafe = cafe.filter((idCafe) => idCafe.id == 2);
+const pitubaCafe = cafe.filter((idCafe) => idCafe.id == 1);
+
+function cafeFiltrar() {
   for (let nome of centroCafe) {
     let nomeCentro = nome.nome;
     console.log(nomeCentro);
   }
   for (let nome of pitubaCafe) {
-    let nomePituba = nome.nome
-    console.log(nomePituba)
+    let nomePituba = nome.nome;
+    console.log(nomePituba);
+  }
+}
+
+let filtros = document.getElementsByClassName("nomeref");
+filtros.onclick = () => {
+  if (document.getElementById("cafe-da-manha")) {
+    cafeFiltrar();
+    document.write(nomeCentro);
   }
 };
