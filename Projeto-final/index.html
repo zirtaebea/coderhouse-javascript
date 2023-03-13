@@ -13,7 +13,16 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <header><h1>Cardápio Soteropolitano</h1></header>
+    <header>
+      <h1>Cardápio Soteropolitano</h1>
+      <nav>
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Bairros</a>
+        <a href="#">Contato</a>
+      </nav>
+    </header>
+
     <div class="background">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Salvador_BA.jpg/1920px-Salvador_BA.jpg"
@@ -21,14 +30,14 @@
         class="bg-img"
       />
       <div class="gradiente"></div>
+      <section class="texto-inicio">
+        <h2>Procurando um restaurante Soteropolitano?</h2>
+      </section>
     </div>
-
-    <h2>Procurando um restaurante Soteropolitano?</h2>
+    <br />
     <form action="#" method="get" target="_blank">
       <section class="caixa-de-busca">
-        <br />
-        <label for="busca"
-          ><br />
+        <label for="busca">
           <input
             class="dados-site"
             type="text"
@@ -37,16 +46,19 @@
             placeholder="   Insira o nome do bairro"
           />
         </label>
+        <div class="botao">
+          <input type="submit" value="Pesquisar" />
+        </div>
       </section>
-      <section class="botao"><input type="submit" value="Pesquisar" /></section>
     </form>
     <br />
-
-    <button type="button" id="cafe-da-manha" class="nomeref">
-      Café da manhã
-    </button>
-    <button type="button" id="almoco" class="nomeref">Almoço</button>
-    <button type="button" id="jantar" class="nomeref">Jantar</button>
-    <button type="button" id="todos" class="nomeref">Todos</button>
+    <div class="filtros">
+      <button type="button" id="cafe-da-manha" class="nomeref">
+        Café da manhã
+      </button>
+      <button type="button" id="almoco" class="nomeref">Almoço</button>
+      <button type="button" id="jantar" class="nomeref">Jantar</button>
+      <button type="button" id="todos" class="nomeref">Todos</button>
+    </div>
   </body>
 </html>
