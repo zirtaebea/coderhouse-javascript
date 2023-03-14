@@ -143,8 +143,7 @@ function salvarNovoEvento(e) {
   }
 }
 
-/*
-function filtrar(e) {
+const filtrar = () => {
   const jantar = document.getElementsByName("jantar");
   const almoco = document.getElementsByName("almoco");
   const todos = document.getElementsByName("todos");
@@ -165,8 +164,6 @@ function filtrar(e) {
       jantar.remove();
       almoco.remove();
       todos.remove();
-
-
     } else if (refeicao == "jantar") {
       let filtro = ref.nome;
       mostraRestaurante(filtro);
@@ -175,8 +172,7 @@ function filtrar(e) {
       mostraRestaurante(filtro);
     }
   }
-}
-*/
+};
 
 //funções
 function mostraRestaurante(nome) {
