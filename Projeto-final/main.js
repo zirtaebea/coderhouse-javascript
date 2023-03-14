@@ -1,4 +1,5 @@
 //ATENCAO, O DOC AINDA ESTÁ SEM OS FILTROS, só funciona digitando os bairros: pituba e centro.
+//falta formatar o css dos cards dos restaurantes
 
 //armazenando os objetos em arrays
 const cafe = [
