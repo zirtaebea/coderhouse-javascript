@@ -127,11 +127,6 @@ function salvarNovoEvento(e) {
   e.preventDefault();
   const bairro = inputBairro.value;
   mostraRestaurante(bairro);
-  if (mostraRestaurante(bairro) == true) {
-    console.log("O evento é válido");
-  } else {
-    console.log("O evento é inválido");
-  }
 }
 
 //funções
