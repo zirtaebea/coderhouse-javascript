@@ -55,7 +55,7 @@ a:hover {
   width: 100%;
   height: 9rem;
   left: 0px;
-  top: 160px;
+  top: 150px;
   padding-top: 160px;
   background: linear-gradient(
     100.53deg,
@@ -164,7 +164,7 @@ input {
 
 .filtros {
   width: 52%;
-  height: 200px;
+  height: 50px;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -183,4 +183,28 @@ input {
   margin-bottom: 10px;
   gap: 10px;
   border-radius: 12px 12px 12px 12px;
+}
+
+#card-restaurantes {
+  display: block;
+  position: absolute;
+  font-family: "roboto";
+  left: 25%;
+  width: 60%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+li {
+  position: relative;
+  display: inline-block;
+  font-family: "roboto";
+  color: #ff4b40;
+  border-radius: 12px;
+  border: 1px #b6b6b6 solid;
+  margin-bottom: 17px;
+  margin-right: 17px;
+  width: 240px;
+  height: 170px;
 }

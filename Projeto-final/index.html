@@ -10,7 +10,6 @@
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
-    <script src="main.js"></script>
   </head>
   <body>
     <header>
@@ -22,43 +21,47 @@
         <a href="#">Contato</a>
       </nav>
     </header>
-
-    <div class="background">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Salvador_BA.jpg/1920px-Salvador_BA.jpg"
-        alt="teste"
-        class="bg-img"
-      />
-      <div class="gradiente"></div>
-      <section class="texto-inicio">
-        <h2>Procurando um restaurante Soteropolitano?</h2>
-      </section>
-    </div>
-    <br />
-    <form action="#" method="get" target="_blank">
-      <section class="caixa-de-busca">
-        <label for="busca">
-          <input
-            class="dados-site"
-            type="text"
-            id="busca"
-            name="bairro"
-            placeholder="   Insira o nome do bairro"
-          />
-        </label>
-        <div class="botao">
-          <input type="submit" value="Pesquisar" />
-        </div>
-      </section>
-    </form>
-    <br />
-    <div class="filtros">
-      <button type="button" id="cafe-da-manha" class="nomeref">
-        Café da manhã
-      </button>
-      <button type="button" id="almoco" class="nomeref">Almoço</button>
-      <button type="button" id="jantar" class="nomeref">Jantar</button>
-      <button type="button" id="todos" class="nomeref">Todos</button>
-    </div>
+    <main>
+      <div class="background">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Salvador_BA.jpg/1920px-Salvador_BA.jpg"
+          alt="teste"
+          class="bg-img"
+        />
+        <div class="gradiente"></div>
+        <section class="texto-inicio">
+          <h2>Procurando um restaurante Soteropolitano?</h2>
+        </section>
+      </div>
+      <br />
+      <form action=" " id="novoEvent" method="get" target="_blank">
+        <section class="caixa-de-busca">
+          <label for="busca">
+            <input
+              class="dados-site"
+              type="text"
+              id="busca"
+              name="bairro"
+              placeholder="   Insira o nome do bairro"
+            />
+          </label>
+          <div class="botao">
+            <input type="submit" id="send" value="Pesquisar" />
+          </div>
+        </section>
+      </form>
+      <br />
+      <div class="filtros">
+        <button type="button" id="cafe-da-manha" class="nomeref">
+          Café da manhã
+        </button>
+        <button type="button" id="almoco" class="nomeref">Almoço</button>
+        <button type="button" id="jantar" class="nomeref">Jantar</button>
+        <button type="button" id="todos" class="nomeref">Todos</button>
+      </div>
+      <br /><br />
+      <section id="card-restaurantes"></section>
+    </main>
+    <script src="main.js"></script>
   </body>
 </html>

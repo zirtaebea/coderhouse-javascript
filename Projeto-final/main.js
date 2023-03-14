@@ -31,27 +31,82 @@ const jantar = [
   { id: 2, nome: "Zanzibar", preco: 2, avaliacaoUsuario: 4 },
 ];
 
+//geral
 const cafeAlmoco = cafe.concat(almoco);
 const geral = cafeAlmoco.concat(jantar);
 
+//filtros
 const centroCafe = cafe.filter((idCafe) => idCafe.id == 2);
-const pitubaCafe = cafe.filter((idCafe) => idCafe.id == 1);
+const centroAlmoco = almoco.filter((idAlmoco) => idAlmoco.id == 2);
+const centroJantar = jantar.filter((idJantar) => idJantar.id == 2);
 
-function cafeFiltrar() {
-  for (let nome of centroCafe) {
-    let nomeCentro = nome.nome;
-    console.log(nomeCentro);
+const pitubaCafe = cafe.filter((idCafe) => idCafe.id == 1);
+const pitubaAlmoco = almoco.filter((idAlmoco) => idAlmoco.id == 1);
+const pitubaJantar = jantar.filter((idJantar) => idJantar.id == 1);
+
+//acessando html
+const novoEvento = document.getElementById("novoEvent");
+const inputBairro = document.getElementById("busca");
+
+//funções
+/*function valida(nome) {
+  if (nome != "") {
+    const nomeBairro = nome.toUpperCase();
+    if (nomeBairro == "PITUBA") {
+      const geralPituba = geral.filter((local) => local.id == 1);
+      for (let pituba of geralPituba) {
+        console.log(pituba.nome);
+      }
+    } else if (nomeBairro == "CENTRO") {
+      const geralBairro = geral.filter((local) => local.id == 2);
+      for (let centro of geralCentro) {
+        console.log(centro.nome);
+      }
+    } else {
+      alert("Bairro inexistente :(");
+    }
+  } else {
+    alert("Preencha o campo!");
   }
-  for (let nome of pitubaCafe) {
-    let nomePituba = nome.nome;
-    console.log(nomePituba);
+}
+*/
+
+//evento
+function salvarNovoEvento(e) {
+  e.preventDefault();
+  const bairro = inputBairro.value;
+  if (mostraRestaurante(bairro) == true) {
+    console.log("O evento é válido");
+  } else {
+    console.log("O evento é inválido");
   }
 }
 
-let filtros = document.getElementsByClassName("nomeref");
-filtros.onclick = () => {
-  if (document.getElementById("cafe-da-manha")) {
-    cafeFiltrar();
-    document.write(nomeCentro);
+function mostraRestaurante(nome) {
+  if (nome != "") {
+    const nomeBairro = nome.toUpperCase();
+    if (nomeBairro == "PITUBA") {
+      const geralPituba = geral.filter((local) => local.id == 1);
+      for (let pituba of geralPituba) {
+        const restaurante = document.getElementById("card-restaurantes");
+        let li = document.createElement("li");
+        li.innerHTML = `<br>
+                        Nome: ${pituba.nome} 
+                        <br>
+                        Preço: ${pituba.preco}`;
+        restaurante.appendChild(li);
+      }
+    } else if (nomeBairro == "CENTRO") {
+      const geralBairro = geral.filter((local) => local.id == 2);
+      for (let centro of geralCentro) {
+        console.log(centro.nome);
+      }
+    } else {
+      alert("Bairro inexistente :(");
+    }
+  } else {
+    alert("Preencha o campo!");
   }
-};
+}
+
+novoEvento.addEventListener("submit", salvarNovoEvento);
