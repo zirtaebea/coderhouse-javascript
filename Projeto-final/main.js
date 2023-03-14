@@ -117,19 +117,10 @@ const jantar = [
 const cafeAlmoco = cafe.concat(almoco);
 const geral = cafeAlmoco.concat(jantar);
 
-//filtros
-const centroCafe = cafe.filter((idCafe) => idCafe.id == 2);
-const centroAlmoco = almoco.filter((idAlmoco) => idAlmoco.id == 2);
-const centroJantar = jantar.filter((idJantar) => idJantar.id == 2);
-
-const pitubaCafe = cafe.filter((idCafe) => idCafe.id == 1);
-const pitubaAlmoco = almoco.filter((idAlmoco) => idAlmoco.id == 1);
-const pitubaJantar = jantar.filter((idJantar) => idJantar.id == 1);
-
 //acessando html
 const novoEvento = document.getElementById("novoEvent");
 const inputBairro = document.getElementById("busca");
-//onst filtroBotao = document.getElementsByClassName("filtros");
+const submitCaixa = document.getElementById("send");
 
 //evento
 function salvarNovoEvento(e) {
@@ -142,37 +133,6 @@ function salvarNovoEvento(e) {
     console.log("O evento é inválido");
   }
 }
-
-const filtrar = () => {
-  const jantar = document.getElementsByName("jantar");
-  const almoco = document.getElementsByName("almoco");
-  const todos = document.getElementsByName("todos");
-  e.preventDefault();
-  const refeicao = geral.filter((restaurante) => restaurante.ref);
-  for (const ref of refeicao) {
-    if (refeicao == "cafe") {
-      const restaurante = document.getElementById("card-restaurantes");
-      let li = document.createElement("li");
-      li.innerHTML = `<br>
-                      Nome: ${ref.nome} 
-                      <br>
-                      Preço: ${ref.preco}
-                      <br>
-                      Avaliação: ${ref.avaliacaoUsuario}`;
-      restaurante.appendChild(li);
-      mostraRestaurante(filtro);
-      jantar.remove();
-      almoco.remove();
-      todos.remove();
-    } else if (refeicao == "jantar") {
-      let filtro = ref.nome;
-      mostraRestaurante(filtro);
-    } else if (refeicao == "almoco") {
-      let filtro = ref.nome;
-      mostraRestaurante(filtro);
-    }
-  }
-};
 
 //funções
 function mostraRestaurante(nome) {
