@@ -3,40 +3,114 @@
 
 //armazenando os objetos em arrays
 const cafe = [
-  { id: 1, nome: "Bolo da Luz", preco: "$", avaliacaoUsuario: 4 },
-  { id: 1, nome: "Casa de Noca", preco: "$$$", avaliacaoUsuario: 4 },
-  { id: 1, nome: "Santo Pão Gourmet", preco: "$$$", avaliacaoUsuario: 5 },
-  { id: 2, nome: "Padoca do Carmo", preco: "$", avaliacaoUsuario: 3 },
-  { id: 2, nome: "Pousada des Artes", preco: "$$", avaliacaoUsuario: 5 },
-  { id: 2, nome: "Cafélier", preco: "$$$", avaliacaoUsuario: 4 },
-];
-
-const almoco = [
-  { id: 1, nome: "Bella Gourmet Bistrot", preco: "$$$$", avaliacaoUsuario: 4 },
-  { id: 1, nome: "Arabesque Empório Árabe", preco: "$$", avaliacaoUsuario: 3 },
+  { id: 1, nome: "Bolo da Luz", ref: "cafe", preco: "$", avaliacaoUsuario: 4 },
   {
     id: 1,
-    nome: "Restaurante Martim Pescador",
+    nome: "Casa de Noca",
+    ref: "cafe",
     preco: "$$$",
     avaliacaoUsuario: 4,
   },
-  { id: 2, nome: "Restaurante Pelô Bistrô", preco: "$$$", avaliacaoUsuario: 3 },
-  { id: 2, nome: "Omí Restaurante", preco: "$$$", avaliacaoUsuario: 4 },
+  {
+    id: 1,
+    nome: "Santo Pão Gourmet",
+    ref: "cafe",
+    preco: "$$$",
+    avaliacaoUsuario: 5,
+  },
+  {
+    id: 2,
+    nome: "Padoca do Carmo",
+    ref: "cafe",
+    preco: "$",
+    avaliacaoUsuario: 3,
+  },
+  {
+    id: 2,
+    nome: "Pousada des Artes",
+    ref: "cafe",
+    preco: "$$",
+    avaliacaoUsuario: 5,
+  },
+  { id: 2, nome: "Cafélier", ref: "cafe", preco: "$$$", avaliacaoUsuario: 4 },
+];
+
+const almoco = [
+  {
+    id: 1,
+    nome: "Bella Gourmet Bistrot",
+    ref: "almoco",
+    preco: "$$$$",
+    avaliacaoUsuario: 4,
+  },
+  {
+    id: 1,
+    nome: "Arabesque Empório Árabe",
+    ref: "almoco",
+    preco: "$$",
+    avaliacaoUsuario: 3,
+  },
+  {
+    id: 1,
+    nome: "Restaurante Martim Pescador",
+    ref: "almoco",
+    preco: "$$$",
+    avaliacaoUsuario: 4,
+  },
+  {
+    id: 2,
+    nome: "Restaurante Pelô Bistrô",
+    ref: "almoco",
+    preco: "$$$",
+    avaliacaoUsuario: 3,
+  },
+  {
+    id: 2,
+    nome: "Omí Restaurante",
+    ref: "almoco",
+    preco: "$$$",
+    avaliacaoUsuario: 4,
+  },
   {
     id: 2,
     nome: "Restaurante Mistura Contorno",
+    ref: "almoco",
     preco: "$$$$$",
     avaliacaoUsuario: 5,
   },
 ];
 
 const jantar = [
-  { id: 1, nome: "La Pasta Gialla", preco: "$$", avaliacaoUsuario: 4 },
-  { id: 1, nome: "Cantina Buoni Amici", preco: "$$", avaliacaoUsuario: 3 },
-  { id: 1, nome: "Origem", preco: "$$$$$", avaliacaoUsuario: 5 },
-  { id: 2, nome: "Bar Ulisses", preco: "$$", avaliacaoUsuario: 5 },
-  { id: 2, nome: "Poró Restaurante & Bar", preco: "$$$", avaliacaoUsuario: 4 },
-  { id: 2, nome: "Zanzibar", preco: "$$", avaliacaoUsuario: 4 },
+  {
+    id: 1,
+    nome: "La Pasta Gialla",
+    ref: "jantar",
+    preco: "$$",
+    avaliacaoUsuario: 4,
+  },
+  {
+    id: 1,
+    nome: "Cantina Buoni Amici",
+    ref: "jantar",
+    preco: "$$",
+    avaliacaoUsuario: 3,
+  },
+  { id: 1, nome: "Origem", ref: "jantar", preco: "$$$$$", avaliacaoUsuario: 5 },
+  {
+    id: 2,
+    nome: "Bar Ulisses",
+    ref: "jantar",
+    preco: "$$",
+    avaliacaoUsuario: 5,
+  },
+  {
+    id: 2,
+    nome: "Poró Restaurante & Bar",
+    ref: "jantar",
+    preco: "$$$",
+    avaliacaoUsuario: 4,
+  },
+  { id: 2, nome: "Zanzibar", ref: "jantar", preco: "$$", avaliacaoUsuario: 4 },
 ];
 
 //geral
@@ -55,6 +129,7 @@ const pitubaJantar = jantar.filter((idJantar) => idJantar.id == 1);
 //acessando html
 const novoEvento = document.getElementById("novoEvent");
 const inputBairro = document.getElementById("busca");
+//onst filtroBotao = document.getElementsByClassName("filtros");
 
 //evento
 function salvarNovoEvento(e) {
@@ -67,6 +142,41 @@ function salvarNovoEvento(e) {
     console.log("O evento é inválido");
   }
 }
+
+/*
+function filtrar(e) {
+  const jantar = document.getElementsByName("jantar");
+  const almoco = document.getElementsByName("almoco");
+  const todos = document.getElementsByName("todos");
+  e.preventDefault();
+  const refeicao = geral.filter((restaurante) => restaurante.ref);
+  for (const ref of refeicao) {
+    if (refeicao == "cafe") {
+      const restaurante = document.getElementById("card-restaurantes");
+      let li = document.createElement("li");
+      li.innerHTML = `<br>
+                      Nome: ${ref.nome} 
+                      <br>
+                      Preço: ${ref.preco}
+                      <br>
+                      Avaliação: ${ref.avaliacaoUsuario}`;
+      restaurante.appendChild(li);
+      mostraRestaurante(filtro);
+      jantar.remove();
+      almoco.remove();
+      todos.remove();
+
+
+    } else if (refeicao == "jantar") {
+      let filtro = ref.nome;
+      mostraRestaurante(filtro);
+    } else if (refeicao == "almoco") {
+      let filtro = ref.nome;
+      mostraRestaurante(filtro);
+    }
+  }
+}
+*/
 
 //funções
 function mostraRestaurante(nome) {
