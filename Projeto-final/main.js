@@ -1,34 +1,41 @@
+//ATENCAO, O DOC AINDA ESTÁ SEM OS FILTROS, só funciona digitando os bairros: pituba e centro.
+
 //armazenando os objetos em arrays
 const cafe = [
-  { id: 1, nome: "Bolo da Luz", preco: 1, avaliacaoUsuario: 4 },
-  { id: 1, nome: "Casa de Noca", preco: 3, avaliacaoUsuario: 4 },
-  { id: 1, nome: "Santo Pão Gourmet", preco: 3, avaliacaoUsuario: 5 },
-  { id: 2, nome: "Padoca do Carmo", preco: 1, avaliacaoUsuario: 3 },
-  { id: 2, nome: "Pousada des Artes", preco: 2, avaliacaoUsuario: 5 },
-  { id: 2, nome: "Cafélier", preco: 3, avaliacaoUsuario: 4 },
+  { id: 1, nome: "Bolo da Luz", preco: "$", avaliacaoUsuario: 4 },
+  { id: 1, nome: "Casa de Noca", preco: "$$$", avaliacaoUsuario: 4 },
+  { id: 1, nome: "Santo Pão Gourmet", preco: "$$$", avaliacaoUsuario: 5 },
+  { id: 2, nome: "Padoca do Carmo", preco: "$", avaliacaoUsuario: 3 },
+  { id: 2, nome: "Pousada des Artes", preco: "$$", avaliacaoUsuario: 5 },
+  { id: 2, nome: "Cafélier", preco: "$$$", avaliacaoUsuario: 4 },
 ];
 
 const almoco = [
-  { id: 1, nome: "Bella Gourmet Bistrot", preco: 4, avaliacaoUsuario: 4 },
-  { id: 1, nome: "Arabesque Empório Árabe", preco: 2, avaliacaoUsuario: 3 },
-  { id: 1, nome: "Restaurante Martim Pescador", preco: 3, avaliacaoUsuario: 4 },
-  { id: 2, nome: "Restaurante Pelô Bistrô", preco: 3, avaliacaoUsuario: 3 },
-  { id: 2, nome: "Omí Restaurante", preco: 4, avaliacaoUsuario: 4 },
+  { id: 1, nome: "Bella Gourmet Bistrot", preco: "$$$$", avaliacaoUsuario: 4 },
+  { id: 1, nome: "Arabesque Empório Árabe", preco: "$$", avaliacaoUsuario: 3 },
+  {
+    id: 1,
+    nome: "Restaurante Martim Pescador",
+    preco: "$$$",
+    avaliacaoUsuario: 4,
+  },
+  { id: 2, nome: "Restaurante Pelô Bistrô", preco: "$$$", avaliacaoUsuario: 3 },
+  { id: 2, nome: "Omí Restaurante", preco: "$$$", avaliacaoUsuario: 4 },
   {
     id: 2,
     nome: "Restaurante Mistura Contorno",
-    preco: 5,
+    preco: "$$$$$",
     avaliacaoUsuario: 5,
   },
 ];
 
 const jantar = [
-  { id: 1, nome: "La Pasta Gialla", preco: 2, avaliacaoUsuario: 4 },
-  { id: 1, nome: "Cantina Buoni Amici", preco: 2, avaliacaoUsuario: 3 },
-  { id: 1, nome: "Origem", preco: 5, avaliacaoUsuario: 5 },
-  { id: 2, nome: "Bar Ulisses", preco: 2, avaliacaoUsuario: 5 },
-  { id: 2, nome: "Poró Restaurante & Bar", preco: 3, avaliacaoUsuario: 4 },
-  { id: 2, nome: "Zanzibar", preco: 2, avaliacaoUsuario: 4 },
+  { id: 1, nome: "La Pasta Gialla", preco: "$$", avaliacaoUsuario: 4 },
+  { id: 1, nome: "Cantina Buoni Amici", preco: "$$", avaliacaoUsuario: 3 },
+  { id: 1, nome: "Origem", preco: "$$$$$", avaliacaoUsuario: 5 },
+  { id: 2, nome: "Bar Ulisses", preco: "$$", avaliacaoUsuario: 5 },
+  { id: 2, nome: "Poró Restaurante & Bar", preco: "$$$", avaliacaoUsuario: 4 },
+  { id: 2, nome: "Zanzibar", preco: "$$", avaliacaoUsuario: 4 },
 ];
 
 //geral
@@ -48,33 +55,11 @@ const pitubaJantar = jantar.filter((idJantar) => idJantar.id == 1);
 const novoEvento = document.getElementById("novoEvent");
 const inputBairro = document.getElementById("busca");
 
-//funções
-/*function valida(nome) {
-  if (nome != "") {
-    const nomeBairro = nome.toUpperCase();
-    if (nomeBairro == "PITUBA") {
-      const geralPituba = geral.filter((local) => local.id == 1);
-      for (let pituba of geralPituba) {
-        console.log(pituba.nome);
-      }
-    } else if (nomeBairro == "CENTRO") {
-      const geralBairro = geral.filter((local) => local.id == 2);
-      for (let centro of geralCentro) {
-        console.log(centro.nome);
-      }
-    } else {
-      alert("Bairro inexistente :(");
-    }
-  } else {
-    alert("Preencha o campo!");
-  }
-}
-*/
-
 //evento
 function salvarNovoEvento(e) {
   e.preventDefault();
   const bairro = inputBairro.value;
+  mostraRestaurante(bairro);
   if (mostraRestaurante(bairro) == true) {
     console.log("O evento é válido");
   } else {
@@ -82,6 +67,7 @@ function salvarNovoEvento(e) {
   }
 }
 
+//funções
 function mostraRestaurante(nome) {
   if (nome != "") {
     const nomeBairro = nome.toUpperCase();
@@ -93,13 +79,23 @@ function mostraRestaurante(nome) {
         li.innerHTML = `<br>
                         Nome: ${pituba.nome} 
                         <br>
-                        Preço: ${pituba.preco}`;
+                        Preço: ${pituba.preco}
+                        <br>
+                        Avaliação: ${pituba.avaliacaoUsuario}`;
         restaurante.appendChild(li);
       }
     } else if (nomeBairro == "CENTRO") {
-      const geralBairro = geral.filter((local) => local.id == 2);
+      const geralCentro = geral.filter((local) => local.id == 2);
       for (let centro of geralCentro) {
-        console.log(centro.nome);
+        const restaurante = document.getElementById("card-restaurantes");
+        let li = document.createElement("li");
+        li.innerHTML = `<br>
+                        Nome: ${centro.nome} 
+                        <br>
+                        Preço: ${centro.preco}
+                        <br>
+                        Avaliação: ${centro.avaliacaoUsuario}`;
+        restaurante.appendChild(li);
       }
     } else {
       alert("Bairro inexistente :(");
