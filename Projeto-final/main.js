@@ -120,7 +120,34 @@ const geral = cafeAlmoco.concat(jantar);
 //acessando html
 const novoEvento = document.getElementById("novoEvent");
 const inputBairro = document.getElementById("busca");
-const submitCaixa = document.getElementById("send");
+const filtros = document.getElementsByTagName("button");
+
+/*function aplicaFiltros(nomeb, elemento) {
+  const filtraCafe = document.getElementById("cafe-da-manha");
+  const filtraAlmoco = document.getElementById("almoco");
+  const filtraJantar = document.getElementById("jantar");
+  const limpaTudo = document.getElementById("limpar");
+  let bairro = nomeb;
+
+  filtros.onclick = () => {
+    elemento.remove();
+    let filtro = " ";
+    if (filtro == filtraCafe) {
+      bairro = geral.filter((local) => local.ref == "cafe");
+      for (const filtropituba of bairro) {
+        let elemento = document.createElement("li");
+        elemento.innerHTML = `<br>
+          Nome: ${filtropituba.nome} 
+          <br>
+          Preço: ${filtropituba.preco}
+          <br>
+          Avaliação: ${filtropituba.avaliacaoUsuario}`;
+        restaurante.appendChild(elemento);
+      }
+    }
+  filtros.addEventListener("click", aplicaFiltros);};
+}
+*/
 
 //evento
 function salvarNovoEvento(e) {
