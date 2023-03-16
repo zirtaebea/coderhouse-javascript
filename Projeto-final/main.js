@@ -1,43 +1,56 @@
-//ATENCAO, O DOC AINDA ESTÁ SEM OS FILTROS, só funciona digitando os bairros: pituba e centro.
-//falta formatar o css dos cards dos restaurantes
-
 //armazenando os objetos em arrays
-const cafe = [
-  { id: 1, nome: "Bolo da Luz", ref: "cafe", preco: "$", avaliacaoUsuario: 4 },
+const geral = [
   {
     id: 1,
+    bairro: "Pituba",
+    nome: "Bolo da Luz",
+    ref: "cafe-da-manha",
+    preco: "$",
+    avaliacaoUsuario: 4,
+  },
+  {
+    id: 1,
+    bairro: "Pituba",
     nome: "Casa de Noca",
-    ref: "cafe",
+    ref: "cafe-da-manha",
     preco: "$$$",
     avaliacaoUsuario: 4,
   },
   {
     id: 1,
+    bairro: "Pituba",
     nome: "Santo Pão Gourmet",
-    ref: "cafe",
+    ref: "cafe-da-manha",
     preco: "$$$",
     avaliacaoUsuario: 5,
   },
   {
     id: 2,
+    bairro: "Centro",
     nome: "Padoca do Carmo",
-    ref: "cafe",
+    ref: "cafe-da-manha",
     preco: "$",
     avaliacaoUsuario: 3,
   },
   {
     id: 2,
+    bairro: "Centro",
     nome: "Pousada des Artes",
-    ref: "cafe",
+    ref: "cafe-da-manha",
     preco: "$$",
     avaliacaoUsuario: 5,
   },
-  { id: 2, nome: "Cafélier", ref: "cafe", preco: "$$$", avaliacaoUsuario: 4 },
-];
-
-const almoco = [
+  {
+    id: 2,
+    bairro: "Centro",
+    nome: "Cafélier",
+    ref: "cafe-da-manha",
+    preco: "$$$",
+    avaliacaoUsuario: 4,
+  },
   {
     id: 1,
+    bairro: "Pituba",
     nome: "Bella Gourmet Bistrot",
     ref: "almoco",
     preco: "$$$$",
@@ -45,6 +58,7 @@ const almoco = [
   },
   {
     id: 1,
+    bairro: "Pituba",
     nome: "Arabesque Empório Árabe",
     ref: "almoco",
     preco: "$$",
@@ -52,6 +66,7 @@ const almoco = [
   },
   {
     id: 1,
+    bairro: "Pituba",
     nome: "Restaurante Martim Pescador",
     ref: "almoco",
     preco: "$$$",
@@ -59,6 +74,7 @@ const almoco = [
   },
   {
     id: 2,
+    bairro: "Centro",
     nome: "Restaurante Pelô Bistrô",
     ref: "almoco",
     preco: "$$$",
@@ -66,6 +82,7 @@ const almoco = [
   },
   {
     id: 2,
+    bairro: "Centro",
     nome: "Omí Restaurante",
     ref: "almoco",
     preco: "$$$",
@@ -73,16 +90,15 @@ const almoco = [
   },
   {
     id: 2,
+    bairro: "Centro",
     nome: "Restaurante Mistura Contorno",
     ref: "almoco",
     preco: "$$$$$",
     avaliacaoUsuario: 5,
   },
-];
-
-const jantar = [
   {
     id: 1,
+    bairro: "Pituba",
     nome: "La Pasta Gialla",
     ref: "jantar",
     preco: "$$",
@@ -90,14 +106,23 @@ const jantar = [
   },
   {
     id: 1,
+    bairro: "Pituba",
     nome: "Cantina Buoni Amici",
     ref: "jantar",
     preco: "$$",
     avaliacaoUsuario: 3,
   },
-  { id: 1, nome: "Origem", ref: "jantar", preco: "$$$$$", avaliacaoUsuario: 5 },
+  {
+    id: 1,
+    bairro: "Pituba",
+    nome: "Origem",
+    ref: "jantar",
+    preco: "$$$$$",
+    avaliacaoUsuario: 5,
+  },
   {
     id: 2,
+    bairro: "Centro",
     nome: "Bar Ulisses",
     ref: "jantar",
     preco: "$$",
@@ -105,92 +130,86 @@ const jantar = [
   },
   {
     id: 2,
+    bairro: "Centro",
     nome: "Poró Restaurante & Bar",
     ref: "jantar",
     preco: "$$$",
     avaliacaoUsuario: 4,
   },
-  { id: 2, nome: "Zanzibar", ref: "jantar", preco: "$$", avaliacaoUsuario: 4 },
+  {
+    id: 2,
+    bairro: "Centro",
+    nome: "Zanzibar",
+    ref: "jantar",
+    preco: "$$",
+    avaliacaoUsuario: 4,
+  },
 ];
-
-//geral
-const cafeAlmoco = cafe.concat(almoco);
-const geral = cafeAlmoco.concat(jantar);
 
 //acessando html
 const novoEvento = document.getElementById("novoEvent");
 const inputBairro = document.getElementById("busca");
-const filtros = document.getElementsByTagName("button");
+const filtrosgeral = document.querySelectorAll(".nomeref");
 
-/*function aplicaFiltros(nomeb, elemento) {
-  const filtraCafe = document.getElementById("cafe-da-manha");
-  const filtraAlmoco = document.getElementById("almoco");
-  const filtraJantar = document.getElementById("jantar");
-  const limpaTudo = document.getElementById("limpar");
-  let bairro = nomeb;
+//filtros
+let filtro = "";
 
-  filtros.onclick = () => {
-    elemento.remove();
-    let filtro = " ";
-    if (filtro == filtraCafe) {
-      bairro = geral.filter((local) => local.ref == "cafe");
-      for (const filtropituba of bairro) {
-        let elemento = document.createElement("li");
-        elemento.innerHTML = `<br>
-          Nome: ${filtropituba.nome} 
-          <br>
-          Preço: ${filtropituba.preco}
-          <br>
-          Avaliação: ${filtropituba.avaliacaoUsuario}`;
-        restaurante.appendChild(elemento);
-      }
+filtrosgeral.forEach((element) => {
+  element.onclick = (e) => {
+    console.log(e);
+    filtro = e.target.id;
+    console.log(filtro);
+    mostraRestaurante();
+  };
+});
+
+//consultando o input
+function consultarBairro() {
+  const nomebairro = inputBairro.value.toUpperCase();
+  if (nomebairro != "") {
+    if (geral.some((local) => local.bairro.toLocaleUpperCase() == nomebairro)) {
+      return nomebairro;
+    } else {
+      alert("Bairro não cadastrado!");
     }
-  filtros.addEventListener("click", aplicaFiltros);};
+  } else {
+    alert("Campo não preenchido!");
+  }
+  return "";
 }
-*/
 
-//evento
+//evento de evitar redirecionar para outra pagina
 function salvarNovoEvento(e) {
   e.preventDefault();
-  const bairro = inputBairro.value;
+  let bairro = inputBairro.value;
   mostraRestaurante(bairro);
 }
 
-//funções
-function mostraRestaurante(nome) {
-  if (nome != "") {
-    const nomeBairro = nome.toUpperCase();
-    if (nomeBairro == "PITUBA") {
-      const geralPituba = geral.filter((local) => local.id == 1);
-      for (let pituba of geralPituba) {
-        const restaurante = document.getElementById("card-restaurantes");
-        let li = document.createElement("li");
-        li.innerHTML = `<br>
-                        Nome: ${pituba.nome} 
-                        <br>
-                        Preço: ${pituba.preco}
-                        <br>
-                        Avaliação: ${pituba.avaliacaoUsuario}`;
-        restaurante.appendChild(li);
-      }
-    } else if (nomeBairro == "CENTRO") {
-      const geralCentro = geral.filter((local) => local.id == 2);
-      for (let centro of geralCentro) {
-        const restaurante = document.getElementById("card-restaurantes");
-        let li = document.createElement("li");
-        li.innerHTML = `<br>
-                        Nome: ${centro.nome} 
-                        <br>
-                        Preço: ${centro.preco}
-                        <br>
-                        Avaliação: ${centro.avaliacaoUsuario}`;
-        restaurante.appendChild(li);
-      }
-    } else {
-      alert("Bairro inexistente :(");
-    }
+//escrever lista de restaurantes
+function mostraRestaurante() {
+  const restaurante = document.getElementById("card-restaurantes");
+  restaurante.innerHTML = "";
+  let todos = [];
+  const verificaBairro = consultarBairro();
+  if (filtro != "") {
+    todos = geral.filter(
+      (local) =>
+        local.bairro.toUpperCase() == verificaBairro && filtro == local.ref
+    );
   } else {
-    alert("Preencha o campo!");
+    todos = geral.filter(
+      (local) => local.bairro.toUpperCase() == verificaBairro
+    );
+  }
+  for (let rest of todos) {
+    let li = document.createElement("li");
+    li.innerHTML = `<br>
+                        Nome: ${rest.nome} 
+                        <br>
+                        Preço: ${rest.preco}
+                        <br>
+                        Avaliação: ${rest.avaliacaoUsuario}`;
+    restaurante.appendChild(li);
   }
 }
 
