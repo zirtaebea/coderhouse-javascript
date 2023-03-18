@@ -163,6 +163,7 @@ filtrosgeral.forEach((element) => {
   };
 });
 
+//teste
 //consultando o input
 function consultarBairro() {
   const nomebairro = inputBairro.value.toUpperCase();
