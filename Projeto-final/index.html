@@ -12,15 +12,17 @@
     />
   </head>
   <body>
-    <header>
-      <h1>Cardápio Soteropolitano</h1>
-      <nav>
-        <a href="#">Início</a>
-        <a href="#">Sobre</a>
-        <a href="#">Bairros</a>
-        <a href="#">Contato</a>
-      </nav>
-    </header>
+    <div class="header-config">
+      <header>
+        <h1>Cardápio Soteropolitano</h1>
+        <nav class="barra-nav">
+          <a href="#">Início</a>
+          <a href="#">Sobre</a>
+          <a href="#">Bairros</a>
+          <a href="#">Contato</a>
+        </nav>
+      </header>
+    </div>
     <main>
       <div class="background">
         <img
@@ -30,12 +32,13 @@
         />
         <div class="gradiente"></div>
         <section class="texto-inicio">
-          <h2>Procurando um restaurante Soteropolitano?</h2>
+          <h2>Procurando um</h2>
+          <h2>restaurante Soteropolitano?</h2>
         </section>
       </div>
       <br />
       <form action=" " id="novoEvent" method="get" target="_blank">
-        <section class="caixa-de-busca">
+        <div class="caixa-de-busca">
           <label for="busca">
             <input
               class="dados-site"
@@ -48,7 +51,7 @@
           <div class="botao">
             <input type="submit" id="send" value="Pesquisar" />
           </div>
-        </section>
+        </div>
       </form>
       <br />
       <div class="filtros">
@@ -60,7 +63,7 @@
         <button type="button" id="limpar" class="nomeref">Limpar busca</button>
       </div>
       <br /><br />
-      <section id="card-restaurantes"></section>
+      <div id="card-restaurantes"></div>
     </main>
     <script src="main.js"></script>
   </body>
