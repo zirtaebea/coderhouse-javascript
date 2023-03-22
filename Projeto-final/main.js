@@ -223,30 +223,6 @@ function salvarNovoEvento(e) {
 }
 
 //botao favoritar bairro p usar o storage
-//fazer lista de imagens por bairro
-
-/*,
-
-const imagens = [
-{nome: "Poró Restaurante & Bar",
- link: "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg"},
-
-]
-
-const imgrest = ""
-
-function verificaNome(objeto){
-  if(imagens.nome == objeto){
-    for(let img of imagens){
-      let figuras = img.nome
-      imgrest = "<img href="imagens.img" class="">"
-      return imgrest;
-    }
-  }
-}
-
-
-*/
 
 //escrever lista de restaurantes
 function mostraRestaurante() {
