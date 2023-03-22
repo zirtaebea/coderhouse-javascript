@@ -242,14 +242,13 @@ function mostraRestaurante() {
   }
   for (let rest of todos) {
     let li = document.createElement("li");
-    li.innerHTML = `<br>
-                        <img src="${rest.imagem}" class="imagens-restaurantes">
+    li.innerHTML = `<img src="${rest.imagem}" class="imagens-restaurantes">
                         <br>
-                        <p class="itens-lista">Nome: ${rest.nome}
+                        <p class="itens-lista">${rest.nome}
                         <br>
-                        Preço: ${rest.preco}
+                        ${rest.preco}
                         <br>
-                        Avaliação: ${rest.avaliacaoUsuario}</p>`;
+                        ${rest.avaliacaoUsuario}</p>`;
     restaurante.appendChild(li);
   }
 }
