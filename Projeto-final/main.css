@@ -216,3 +216,13 @@ header h1 {
   width: 27%;
   height: 170px;
 }
+
+#card-restaurantes li .imagens-restaurantes {
+  width: 50px;
+  height: 50px;
+}
+
+#card-restaurantes li .itens-lista {
+  font-family: "Roboto";
+  display: table;
+}

@@ -2,6 +2,8 @@
 const geral = [
   {
     id: 1,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Pituba",
     nome: "Bolo da Luz",
     ref: "cafe-da-manha",
@@ -10,6 +12,8 @@ const geral = [
   },
   {
     id: 1,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Pituba",
     nome: "Casa de Noca",
     ref: "cafe-da-manha",
@@ -18,6 +22,8 @@ const geral = [
   },
   {
     id: 1,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Pituba",
     nome: "Santo Pão Gourmet",
     ref: "cafe-da-manha",
@@ -26,6 +32,8 @@ const geral = [
   },
   {
     id: 2,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Centro",
     nome: "Padoca do Carmo",
     ref: "cafe-da-manha",
@@ -34,6 +42,8 @@ const geral = [
   },
   {
     id: 2,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Centro",
     nome: "Pousada des Artes",
     ref: "cafe-da-manha",
@@ -42,6 +52,8 @@ const geral = [
   },
   {
     id: 2,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Centro",
     nome: "Cafélier",
     ref: "cafe-da-manha",
@@ -50,6 +62,8 @@ const geral = [
   },
   {
     id: 1,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Pituba",
     nome: "Bella Gourmet Bistrot",
     ref: "almoco",
@@ -58,6 +72,8 @@ const geral = [
   },
   {
     id: 1,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Pituba",
     nome: "Arabesque Empório Árabe",
     ref: "almoco",
@@ -66,6 +82,8 @@ const geral = [
   },
   {
     id: 1,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Pituba",
     nome: "Restaurante Martim Pescador",
     ref: "almoco",
@@ -74,6 +92,8 @@ const geral = [
   },
   {
     id: 2,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Centro",
     nome: "Restaurante Pelô Bistrô",
     ref: "almoco",
@@ -82,6 +102,8 @@ const geral = [
   },
   {
     id: 2,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Centro",
     nome: "Omí Restaurante",
     ref: "almoco",
@@ -90,6 +112,8 @@ const geral = [
   },
   {
     id: 2,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Centro",
     nome: "Restaurante Mistura Contorno",
     ref: "almoco",
@@ -98,6 +122,8 @@ const geral = [
   },
   {
     id: 1,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Pituba",
     nome: "La Pasta Gialla",
     ref: "jantar",
@@ -106,6 +132,8 @@ const geral = [
   },
   {
     id: 1,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Pituba",
     nome: "Cantina Buoni Amici",
     ref: "jantar",
@@ -114,6 +142,8 @@ const geral = [
   },
   {
     id: 1,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Pituba",
     nome: "Origem",
     ref: "jantar",
@@ -122,6 +152,8 @@ const geral = [
   },
   {
     id: 2,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Centro",
     nome: "Bar Ulisses",
     ref: "jantar",
@@ -130,6 +162,8 @@ const geral = [
   },
   {
     id: 2,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Centro",
     nome: "Poró Restaurante & Bar",
     ref: "jantar",
@@ -138,6 +172,8 @@ const geral = [
   },
   {
     id: 2,
+    imagem:
+      "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg",
     bairro: "Centro",
     nome: "Zanzibar",
     ref: "jantar",
@@ -186,6 +222,32 @@ function salvarNovoEvento(e) {
   mostraRestaurante(bairro);
 }
 
+//botao favoritar bairro p usar o storage
+//fazer lista de imagens por bairro
+
+/*,
+
+const imagens = [
+{nome: "Poró Restaurante & Bar",
+ link: "https://pelourinhodiaenoite.salvador.ba.gov.br/wp-content/uploads/2018/11/IMG_0011.jpg"},
+
+]
+
+const imgrest = ""
+
+function verificaNome(objeto){
+  if(imagens.nome == objeto){
+    for(let img of imagens){
+      let figuras = img.nome
+      imgrest = "<img href="imagens.img" class="">"
+      return imgrest;
+    }
+  }
+}
+
+
+*/
+
 //escrever lista de restaurantes
 function mostraRestaurante() {
   const restaurante = document.getElementById("card-restaurantes");
@@ -205,11 +267,13 @@ function mostraRestaurante() {
   for (let rest of todos) {
     let li = document.createElement("li");
     li.innerHTML = `<br>
-                        Nome: ${rest.nome} 
+                        <img src="${rest.imagem}" class="imagens-restaurantes">
+                        <br>
+                        <p class="itens-lista">Nome: ${rest.nome}
                         <br>
                         Preço: ${rest.preco}
                         <br>
-                        Avaliação: ${rest.avaliacaoUsuario}`;
+                        Avaliação: ${rest.avaliacaoUsuario}</p>`;
     restaurante.appendChild(li);
   }
 }
