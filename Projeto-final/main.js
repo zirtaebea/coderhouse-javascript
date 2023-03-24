@@ -193,22 +193,21 @@ let filtro = "";
 filtrosgeral.forEach((element) => {
   element.onclick = (e) => {
     console.log(e);
-    filtro = e.target.id;
+    //condicional acesso a um obj
+    filtro = e?.target?.id;
     console.log(filtro);
     mostraRestaurante();
   };
 });
 
-//teste123
 //consultando o input
 function consultarBairro() {
   const nomebairro = inputBairro.value.toUpperCase();
   if (nomebairro != "") {
-    if (geral.some((local) => local.bairro.toLocaleUpperCase() == nomebairro)) {
-      return nomebairro;
-    } else {
-      alert("Bairro não cadastrado!");
-    }
+    //operador ternario
+    return geral.some((local) => local.bairro.toLocaleUpperCase() == nomebairro)
+      ? nomebairro
+      : alert("Bairro não cadastrado!");
   } else {
     alert("Campo não preenchido!");
   }
@@ -231,10 +230,16 @@ function mostraRestaurante() {
   let todos = [];
   const verificaBairro = consultarBairro();
   if (filtro != "") {
-    todos = geral.filter(
-      (local) =>
-        local.bairro.toUpperCase() == verificaBairro && filtro == local.ref
-    );
+    const filtraTodos = "todos";
+    //operador ternario
+    filtro != filtraTodos
+      ? (todos = geral.filter(
+          (local) =>
+            local.bairro.toUpperCase() == verificaBairro && filtro == local.ref
+        ))
+      : (todos = geral.filter(
+          (local) => local.bairro.toUpperCase() == verificaBairro
+        ));
   } else {
     todos = geral.filter(
       (local) => local.bairro.toUpperCase() == verificaBairro
