@@ -229,7 +229,7 @@ function mostraRestaurante() {
   restaurante.innerHTML = "";
   let todos = [];
   const verificaBairro = consultarBairro();
-  if (filtro != "") {
+  if (filtro != "" && filtro != "fav") {
     const filtraTodos = "todos";
     //operador ternario
     filtro != filtraTodos
@@ -253,9 +253,29 @@ function mostraRestaurante() {
                         <br>
                         ${rest.preco}
                         <br>
-                        ${rest.avaliacaoUsuario}</p>`;
+                        ${rest.avaliacaoUsuario}</p>
+                        <button type="button" id="favorito" class="favorito">Favoritar</buttton>`;
     restaurante.appendChild(li);
   }
 }
 
 novoEvento.addEventListener("submit", salvarNovoEvento);
+
+/*   const fav = document.querySelectorAll("favorito");
+    const favSalvo = "";
+    fav.forEach((element) => {
+      element.onclick = (e) => {
+        geral["Favorito"] = "Sim";
+        if (geral.Favorito == "Sim") {
+          for (let selecao of geral) {
+            for (i = 0; i < favSalvo.length; i++) {
+              favSalvo.push(geral);
+              console.log(favSalvo);
+            }
+          }
+        }
+      };
+    }); */
+
+//BUTTON favoritar
+//if button pressionado, salvar no storage

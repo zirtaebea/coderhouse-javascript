@@ -240,9 +240,21 @@ header h1 {
 #card-restaurantes li .itens-lista {
   font-family: "Roboto";
   display: table;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #2a2a2a;
   padding: 5px;
+}
+
+#card-restaurantes li .favorito {
+  font-family: "roboto";
+  display: table;
+  position: relative;
+  font-size: 0.8rem;
+  color: #ff4b40;
+  background-color: #fff;
+  border: 1px solid #ff4b40;
+  border-radius: 8px;
+  padding: 2px;
 }
 
 footer {
