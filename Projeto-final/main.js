@@ -9,6 +9,7 @@ const geral = [
     ref: "cafe-da-manha",
     preco: "$",
     avaliacaoUsuario: 4,
+    favorito: " ",
   },
   {
     id: 1,
@@ -19,6 +20,7 @@ const geral = [
     ref: "cafe-da-manha",
     preco: "$$$",
     avaliacaoUsuario: 4,
+    favorito: " ",
   },
   {
     id: 1,
@@ -29,6 +31,7 @@ const geral = [
     ref: "cafe-da-manha",
     preco: "$$$",
     avaliacaoUsuario: 5,
+    favorito: " ",
   },
   {
     id: 2,
@@ -39,6 +42,7 @@ const geral = [
     ref: "cafe-da-manha",
     preco: "$",
     avaliacaoUsuario: 3,
+    favorito: " ",
   },
   {
     id: 2,
@@ -49,6 +53,7 @@ const geral = [
     ref: "cafe-da-manha",
     preco: "$$",
     avaliacaoUsuario: 5,
+    favorito: " ",
   },
   {
     id: 2,
@@ -59,6 +64,7 @@ const geral = [
     ref: "cafe-da-manha",
     preco: "$$$",
     avaliacaoUsuario: 4,
+    favorito: " ",
   },
   {
     id: 1,
@@ -69,6 +75,7 @@ const geral = [
     ref: "almoco",
     preco: "$$$$",
     avaliacaoUsuario: 4,
+    favorito: " ",
   },
   {
     id: 1,
@@ -79,6 +86,7 @@ const geral = [
     ref: "almoco",
     preco: "$$",
     avaliacaoUsuario: 3,
+    favorito: " ",
   },
   {
     id: 1,
@@ -89,6 +97,7 @@ const geral = [
     ref: "almoco",
     preco: "$$$",
     avaliacaoUsuario: 4,
+    favorito: " ",
   },
   {
     id: 2,
@@ -99,6 +108,7 @@ const geral = [
     ref: "almoco",
     preco: "$$$",
     avaliacaoUsuario: 3,
+    favorito: " ",
   },
   {
     id: 2,
@@ -109,6 +119,7 @@ const geral = [
     ref: "almoco",
     preco: "$$$",
     avaliacaoUsuario: 4,
+    favorito: " ",
   },
   {
     id: 2,
@@ -119,6 +130,7 @@ const geral = [
     ref: "almoco",
     preco: "$$$$$",
     avaliacaoUsuario: 5,
+    favorito: " ",
   },
   {
     id: 1,
@@ -129,6 +141,7 @@ const geral = [
     ref: "jantar",
     preco: "$$",
     avaliacaoUsuario: 4,
+    favorito: " ",
   },
   {
     id: 1,
@@ -139,6 +152,7 @@ const geral = [
     ref: "jantar",
     preco: "$$",
     avaliacaoUsuario: 3,
+    favorito: " ",
   },
   {
     id: 1,
@@ -149,6 +163,7 @@ const geral = [
     ref: "jantar",
     preco: "$$$$$",
     avaliacaoUsuario: 5,
+    favorito: " ",
   },
   {
     id: 2,
@@ -159,6 +174,7 @@ const geral = [
     ref: "jantar",
     preco: "$$",
     avaliacaoUsuario: 5,
+    favorito: " 3 ",
   },
   {
     id: 2,
@@ -169,6 +185,7 @@ const geral = [
     ref: "jantar",
     preco: "$$$",
     avaliacaoUsuario: 4,
+    favorito: " ",
   },
   {
     id: 2,
@@ -179,6 +196,7 @@ const geral = [
     ref: "jantar",
     preco: "$$",
     avaliacaoUsuario: 4,
+    favorito: " ",
   },
 ];
 
@@ -254,28 +272,22 @@ function mostraRestaurante() {
                         ${rest.preco}
                         <br>
                         ${rest.avaliacaoUsuario}</p>
-                        <button type="button" id="favorito" class="favorito">Favoritar</buttton>`;
+                        <button onclick="addItem()" type="button" id="favorito" class="favorito">Favoritar</buttton>`;
     restaurante.appendChild(li);
+  }
+}
+let arr = [];
+
+function addItem() {
+  let tudo = [];
+  localStorage.getItem("favezinho", arr);
+  let listinha = document.getElementById("card-restaurantes");
+  for (let i = 0; i < listinha.children.length; i++) {
+    if (listinha.children[i].tagName == "LI") {
+      arr.push(listinha.children[i].outerHTML);
+      localStorage.favezinho = JSON.stringify(arr);
+    }
   }
 }
 
 novoEvento.addEventListener("submit", salvarNovoEvento);
-
-/*   const fav = document.querySelectorAll("favorito");
-    const favSalvo = "";
-    fav.forEach((element) => {
-      element.onclick = (e) => {
-        geral["Favorito"] = "Sim";
-        if (geral.Favorito == "Sim") {
-          for (let selecao of geral) {
-            for (i = 0; i < favSalvo.length; i++) {
-              favSalvo.push(geral);
-              console.log(favSalvo);
-            }
-          }
-        }
-      };
-    }); */
-
-//BUTTON favoritar
-//if button pressionado, salvar no storage
