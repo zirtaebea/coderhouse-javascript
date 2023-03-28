@@ -279,7 +279,6 @@ function mostraRestaurante() {
 let arr = [];
 
 function addItem() {
-  let tudo = [];
   localStorage.getItem("favezinho", arr);
   let listinha = document.getElementById("card-restaurantes");
   for (let i = 0; i < listinha.children.length; i++) {
