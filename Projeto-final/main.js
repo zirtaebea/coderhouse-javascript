@@ -174,7 +174,7 @@ const geral = [
     ref: "jantar",
     preco: "$$",
     avaliacaoUsuario: 5,
-    favorito: " 3 ",
+    favorito: " ",
   },
   {
     id: 2,
@@ -265,6 +265,7 @@ function mostraRestaurante() {
   }
   for (let rest of todos) {
     let li = document.createElement("li");
+    li.setAttribute("id", rest.nome);
     li.innerHTML = `<img src="${rest.imagem}" class="imagens-restaurantes">
                         <br>
                         <p class="itens-lista">${rest.nome}
@@ -272,21 +273,27 @@ function mostraRestaurante() {
                         ${rest.preco}
                         <br>
                         ${rest.avaliacaoUsuario}</p>
-                        <button onclick="addItem()" type="button" id="favorito" class="favorito">Favoritar</buttton>`;
+                        <button onclick="addItem('${rest.nome}')" type="button" class="favorito">Favoritar</buttton>`;
     restaurante.appendChild(li);
   }
 }
 let arr = [];
+function addItem(element) {
+  console.log(element);
+  localStorage.setItem("restFavoritos", arr);
+  let listinha = document.getElementById(element);
+  console.log(listinha);
+  arr.push(listinha.outerHTML);
+  localStorage.restFavoritos = JSON.stringify(arr);
 
-function addItem() {
-  localStorage.getItem("favezinho", arr);
-  let listinha = document.getElementById("card-restaurantes");
-  for (let i = 0; i < listinha.children.length; i++) {
-    if (listinha.children[i].tagName == "LI") {
-      arr.push(listinha.children[i].outerHTML);
-      localStorage.favezinho = JSON.stringify(arr);
-    }
-  }
+  swal({
+    position: "top-end",
+    icon: "success",
+    title: "Favoritado",
+    text: "Seu restaurante foi favoritado com sucesso!",
+    button: false,
+    timer: 1500,
+  });
 }
 
 novoEvento.addEventListener("submit", salvarNovoEvento);
