@@ -239,15 +239,13 @@ function salvarNovoEvento(e) {
   mostraRestaurante(bairro);
 }
 
-//botao favoritar bairro p usar o storage
-
 //escrever lista de restaurantes
 function mostraRestaurante() {
   const restaurante = document.getElementById("card-restaurantes");
   restaurante.innerHTML = "";
   let todos = [];
   const verificaBairro = consultarBairro();
-  if (filtro != "" && filtro != "fav") {
+  if (filtro != "") {
     const filtraTodos = "todos";
     //operador ternario
     filtro != filtraTodos
@@ -258,6 +256,11 @@ function mostraRestaurante() {
       : (todos = geral.filter(
           (local) => local.bairro.toUpperCase() == verificaBairro
         ));
+    //aba filtrados
+    if (filtro == "favoritados") {
+      todos = geral.filter((local) => local.favorito.includes("sim"));
+      todos == localStorage.restFavoritos ? todos : false;
+    }
   } else {
     todos = geral.filter(
       (local) => local.bairro.toUpperCase() == verificaBairro
@@ -277,14 +280,30 @@ function mostraRestaurante() {
     restaurante.appendChild(li);
   }
 }
+
+//botao favoritar restaurante p/ usar o storage
 let arr = [];
 function addItem(element) {
   console.log(element);
   localStorage.setItem("restFavoritos", arr);
-  let listinha = document.getElementById(element);
-  console.log(listinha);
-  arr.push(listinha.outerHTML);
-  localStorage.restFavoritos = JSON.stringify(arr);
+
+  //mudando propriedade favoritos p/ 'sim'
+  for (let x of geral) {
+    if (element == x.nome) {
+      //pegando o id do elemento clicado
+      let listinha = document.getElementById(element);
+      console.log(listinha);
+
+      //mudando propriedade 'favorito' no array de obj geral
+      x.favorito = "sim";
+      console.log(x);
+
+      //array de favs no storage
+      arr.push(listinha.outerHTML);
+      localStorage.restFavoritos = JSON.stringify(arr);
+      console.log(localStorage.restFavoritos);
+    }
+  }
 
   swal({
     position: "top-end",
