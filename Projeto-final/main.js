@@ -261,7 +261,7 @@ function mostraRestaurante() {
       let meuStorage = localStorage.restFavoritos;
       for (let i = 0; i < meuStorage.length; i++) {
         todos = geral.filter((local) => local.favorito.includes("sim"));
-        todos == meuStorage[i] ? todos : false;
+        todos == meuStorage[i] ? meuStorage[i] : false;
       }
     }
   } else {
