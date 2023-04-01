@@ -258,8 +258,11 @@ function mostraRestaurante() {
         ));
     //aba filtrados
     if (filtro == "favoritados") {
-      todos = geral.filter((local) => local.favorito.includes("sim"));
-      todos == localStorage.restFavoritos ? todos : false;
+      let meuStorage = localStorage.restFavoritos;
+      for (let i = 0; i < meuStorage.length; i++) {
+        todos = geral.filter((local) => local.favorito.includes("sim"));
+        todos == meuStorage[i] ? todos : false;
+      }
     }
   } else {
     todos = geral.filter(
