@@ -86,6 +86,7 @@ function mostraRestaurante(listaRest) {
     );
   }
 
+  //percorrendo todos os restaurantes e escrevendo dentro do html
   for (let rest of todos) {
     let li = document.createElement("li");
     li.setAttribute("id", rest.nome);
