@@ -100,6 +100,8 @@ function mostraRestaurante(listaRest) {
                         <button id="${rest.nome}" type="button" class="favorito">Favoritar</buttton>`;
     restaurante.appendChild(li);
   }
+
+  //pegando classe do botao de favoritar -> percorre e identifica o restaurante pelo id para salvar na aba de favoritos
   const classFav = document.getElementsByClassName("favorito");
   console.log(classFav);
 
