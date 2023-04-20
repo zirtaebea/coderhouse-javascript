@@ -4,29 +4,39 @@
 const novoEvento = document.getElementById("novoEvent");
 const inputBairro = document.getElementById("busca");
 const filtrosgeral = document.querySelectorAll(".nomeref");
+const loading = document.getElementById("carregando");
 
 //filtros
 let filtro = "";
 
-//loading div loading -> class show/hidden
+//loading div loading -> class show/hidden -> ideia p depois
+const showLoading = function () {
+  Swal.fire({
+    title: "Carregando restaurantes",
+    html: "Aguarde um momento...",
+    allowEscapeKey: false,
+    allowOutsideClick: false,
+    timer: 2000,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+  });
+};
 
 //armazenando os objetos em arrays
 const geral = fetch("restaurantes.json")
   .then((resp) => resp.json())
   .then((listaRest) => {
-    console.log("teste");
     filtrosgeral.forEach((element) => {
       element.onclick = (e) => {
-        console.log(e);
         //condicional acesso a um obj
         filtro = e?.target?.id;
-        console.log(filtro);
         mostraRestaurante(listaRest);
       };
     });
-    novoEvento.addEventListener("submit", (e) =>
-      salvarNovoEvento(e, listaRest)
-    );
+    novoEvento.addEventListener("submit", (e) => {
+      salvarNovoEvento(e, listaRest);
+    });
   });
 
 //consultando o input
@@ -38,9 +48,19 @@ function consultarBairro(listaRest) {
       (local) => local.bairro.toLocaleUpperCase() == nomebairro
     )
       ? nomebairro
-      : alert("Bairro não cadastrado!");
+      : Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Bairro não cadastrado!",
+          timer: 4000,
+        });
   } else {
-    alert("Campo não preenchido!");
+    Swal.fire({
+      icon: "warning",
+      title: "Campo não preenchido",
+      text: "Verifique a caixa de busca e tente novamente",
+      timer: 4000,
+    });
   }
   return "";
 }
@@ -48,8 +68,10 @@ function consultarBairro(listaRest) {
 //evento de evitar redirecionar para outra pagina
 function salvarNovoEvento(e, listaRest) {
   e.preventDefault();
-  //let bairro = inputBairro.value;
-  mostraRestaurante(listaRest);
+  showLoading();
+  setTimeout(() => {
+    mostraRestaurante(listaRest);
+  }, 2000);
 }
 
 //escrever lista de restaurantes
@@ -103,7 +125,6 @@ function mostraRestaurante(listaRest) {
 
   //pegando classe do botao de favoritar -> percorre e identifica o restaurante pelo id para salvar na aba de favoritos
   const classFav = document.getElementsByClassName("favorito");
-  console.log(classFav);
 
   for (let botao of classFav) {
     botao.onclick = (e) => {
@@ -114,8 +135,8 @@ function mostraRestaurante(listaRest) {
 
 //botao favoritar restaurante p/ usar o storage
 let arr = [];
+
 function addItem(element, listaRest) {
-  console.log(element);
   localStorage.setItem("restFavoritos", arr);
 
   //mudando propriedade favoritos p/ 'sim'
@@ -123,21 +144,17 @@ function addItem(element, listaRest) {
     if (element == x.nome) {
       //pegando o id do elemento clicado
       let listinha = document.getElementById(element);
-      console.log(listinha);
 
       //mudando propriedade 'favorito' no array de obj listaRest
       x.favorito = "sim";
-      console.log(x);
 
       //array de favs no storage
       arr.push(listinha.outerHTML);
       localStorage.restFavoritos = JSON.stringify(arr);
-      console.log(localStorage.restFavoritos);
     }
   }
 
-  swal({
-    position: "top-end",
+  Swal.fire({
     icon: "success",
     title: "Favoritado",
     text: "Seu restaurante foi favoritado com sucesso!",
